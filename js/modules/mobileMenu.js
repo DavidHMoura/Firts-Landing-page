@@ -1,4 +1,4 @@
-export function initMobileMenu(){
+export function initMobileMenu() {
   const btn = document.getElementById('mobileMenuBtn');
   const panel = document.getElementById('mobilePanel');
   if (!btn || !panel) return;
@@ -8,16 +8,19 @@ export function initMobileMenu(){
     btn.setAttribute('aria-expanded', 'false');
   };
 
-  btn.addEventListener('click', () => {
+  const toggle = () => {
     const open = panel.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-expanded', String(open));
+  };
+
+  btn.addEventListener('click', toggle);
+
+  panel.addEventListener('click', (e) => {
+    const t = e.target;
+    if (t && t.tagName === 'A') close();
   });
 
-  panel.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', close);
-  });
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 820) close();
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
   });
 }

@@ -1,33 +1,43 @@
-export function initModal(){
+import { getFocusable } from './utils.js';
+
+export function initModal() {
   const overlay = document.getElementById('modalOverlay');
+  const modal = overlay?.querySelector('.modal');
+  const openers = Array.from(document.querySelectorAll('[data-open-modal]'));
+  const closers = Array.from(document.querySelectorAll('[data-close-modal]'));
   const form = document.getElementById('leadForm');
   const success = document.getElementById('successMessage');
-  if (!overlay) return;
+  const whatsapp = document.getElementById('whatsapp');
 
-  const openBtns = document.querySelectorAll('[data-open-modal]');
-  const closeBtns = overlay.querySelectorAll('[data-close-modal]');
-  const modal = overlay.querySelector('.modal');
-  const firstInput = overlay.querySelector('input');
+  if (!overlay || !modal) return;
 
-  let lastFocus = null;
+  let lastActive = null;
 
-  const open = () => {
-    lastFocus = document.activeElement;
+  const setHidden = (isHidden) => {
+    overlay.setAttribute('aria-hidden', String(isHidden));
+    document.body.style.overflow = isHidden ? '' : 'hidden';
+  };
+
+  const open = (trigger) => {
+    lastActive = trigger || document.activeElement;
     overlay.classList.add('active');
-    overlay.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => firstInput?.focus(), 0);
+    setHidden(false);
+
+    const focusables = getFocusable(modal);
+    (focusables[0] || modal).focus();
   };
 
   const close = () => {
     overlay.classList.remove('active');
-    overlay.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    lastFocus?.focus?.();
+    setHidden(true);
+
+    if (lastActive && typeof lastActive.focus === 'function') {
+      lastActive.focus();
+    }
   };
 
-  openBtns.forEach(btn => btn.addEventListener('click', open));
-  closeBtns.forEach(btn => btn.addEventListener('click', close));
+  openers.forEach((b) => b.addEventListener('click', () => open(b)));
+  closers.forEach((b) => b.addEventListener('click', close));
 
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) close();
@@ -35,58 +45,84 @@ export function initModal(){
 
   window.addEventListener('keydown', (e) => {
     if (!overlay.classList.contains('active')) return;
-    if (e.key === 'Escape') close();
 
-    // trap simples
-    if (e.key === 'Tab'){
-      const focusable = modal.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])');
-      if (!focusable.length) return;
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      close();
+      return;
+    }
 
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
+    if (e.key === 'Tab') {
+      const focusables = getFocusable(modal);
+      if (!focusables.length) return;
 
-      if (e.shiftKey && document.activeElement === first){
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
         e.preventDefault();
         last.focus();
-      } else if (!e.shiftKey && document.activeElement === last){
+      } else if (!e.shiftKey && document.activeElement === last) {
         e.preventDefault();
         first.focus();
       }
     }
   });
 
-  if (form){
-    const setError = (name, on) => {
-      const el = form.querySelector(`[data-error-for="${name}"]`);
-      if (!el) return;
-      el.classList.toggle('visible', !!on);
-    };
+  if (whatsapp) {
+    whatsapp.addEventListener('input', () => {
+      const digits = whatsapp.value.replace(/\D/g, '').slice(0, 11);
+      const d = digits;
 
+      if (d.length <= 2) whatsapp.value = d ? `(${d}` : '';
+      else if (d.length <= 7) whatsapp.value = `(${d.slice(0,2)}) ${d.slice(2)}`;
+      else whatsapp.value = `(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}`;
+    });
+  }
+
+  const showError = (name, show) => {
+    const el = form?.querySelector(`[data-error-for="${name}"]`);
+    if (!el) return;
+    el.classList.toggle('visible', !!show);
+  };
+
+  const validateEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v || '').trim());
+
+  const validate = () => {
+    if (!form) return false;
+
+    const name = form.name?.value?.trim();
+    const company = form.company?.value?.trim();
+    const email = form.email?.value?.trim();
+    const wa = form.whatsapp?.value?.replace(/\D/g, '');
+
+    const okName = !!name && name.length >= 2;
+    const okCompany = !!company && company.length >= 2;
+    const okEmail = validateEmail(email);
+    const okWa = !!wa && wa.length >= 10;
+
+    showError('name', !okName);
+    showError('company', !okCompany);
+    showError('email', !okEmail);
+    showError('whatsapp', !okWa);
+
+    return okName && okCompany && okEmail && okWa;
+  };
+
+  if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const name = form.querySelector('#name');
-      const company = form.querySelector('#company');
-      const email = form.querySelector('#email');
-      const whatsapp = form.querySelector('#whatsapp');
+      const ok = validate();
+      if (!ok) return;
 
-      const emailOk = email?.value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
-      const whatsOk = whatsapp?.value && whatsapp.value.replace(/\D/g, '').length >= 10;
-
-      setError('name', !name?.value.trim());
-      setError('company', !company?.value.trim());
-      setError('email', !emailOk);
-      setError('whatsapp', !whatsOk);
-
-      const ok = !!name?.value.trim() && !!company?.value.trim() && emailOk && whatsOk;
-
-      if (ok){
+      if (success) {
         success.style.display = 'block';
-        form.reset();
-        setTimeout(close, 900);
-      } else {
-        success.style.display = 'none';
+        setTimeout(() => { success.style.display = 'none'; }, 3500);
       }
+
+      form.reset();
+      setTimeout(close, 650);
     });
   }
 }

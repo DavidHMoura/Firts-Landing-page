@@ -3,6 +3,7 @@ import { initMobileMenu } from './modules/mobileMenu.js';
 import { initModal } from './modules/modal.js';
 import { initFaq } from './modules/faq.js';
 import { initActiveNav } from './modules/activeNav.js';
+import { prefersReducedMotion } from './modules/utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const year = document.getElementById('year');
@@ -14,23 +15,26 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaq();
   initActiveNav();
 
-  // Mouse glow (leve e sem travar)
-  const glow = document.createElement('div');
-  glow.className = 'mouse-glow';
-  document.body.appendChild(glow);
+  if (!prefersReducedMotion()) {
+    const glow = document.createElement('div');
+    glow.className = 'mouse-glow';
+    document.body.appendChild(glow);
 
-  let raf = null;
-  let x = 0, y = 0;
+    let raf = 0;
+    let lastX = 0;
+    let lastY = 0;
 
-  window.addEventListener('mousemove', (e) => {
-    x = e.clientX;
-    y = e.clientY;
+    const onMove = (e) => {
+      lastX = e.clientX;
+      lastY = e.clientY;
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        glow.style.left = lastX + 'px';
+        glow.style.top = lastY + 'px';
+        raf = 0;
+      });
+    };
 
-    if (raf) return;
-    raf = requestAnimationFrame(() => {
-      glow.style.left = x + 'px';
-      glow.style.top = y + 'px';
-      raf = null;
-    });
-  });
+    window.addEventListener('mousemove', onMove, { passive: true });
+  }
 });

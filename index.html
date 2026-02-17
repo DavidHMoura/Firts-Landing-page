@@ -6,18 +6,23 @@
 
   <title>NeonShield Security | Defesa Digital 24/7</title>
   <meta name="description" content="SOC 24/7, hardening e resposta a incidentes. Reduza risco e acelere a detecção. Diagnóstico rápido e objetivo." />
+  <meta name="theme-color" content="#070A0F" />
+
+  <meta property="og:title" content="NeonShield Security | Defesa Digital 24/7" />
+  <meta property="og:description" content="SOC 24/7, hardening e resposta a incidentes. Diagnóstico rápido e objetivo." />
+  <meta property="og:type" content="website" />
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-  <!-- NAV -->
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
   <nav class="navbar" aria-label="Navegação principal">
     <div class="container navbar-container">
       <a href="#top" class="logo" aria-label="NeonShield - Início">
-        <!-- ESCUDO (usa o favicon.svg como ícone do logo) -->
-        <img class="logo-icon" src="assets/favicon.svg" alt="" aria-hidden="true" />
+        <span class="logo-mark" aria-hidden="true"></span>
         <span class="logo-text">NEONSHIELD</span>
       </a>
 
@@ -28,15 +33,17 @@
         <li><a href="#faq">FAQ</a></li>
       </ul>
 
-      <button class="nav-cta" data-open-modal>Solicitar diagnóstico</button>
+      <div class="nav-actions">
+        <button class="nav-cta" type="button" data-open-modal>Solicitar diagnóstico</button>
 
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobilePanel">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
     </div>
 
     <div class="mobile-panel" id="mobilePanel" aria-label="Menu mobile">
@@ -44,19 +51,19 @@
       <a href="#como-funciona">Como funciona</a>
       <a href="#prova-social">Resultados</a>
       <a href="#faq">FAQ</a>
-      <button class="nav-cta w-100" data-open-modal>Solicitar diagnóstico</button>
+      <button class="nav-cta w-100" type="button" data-open-modal>Solicitar diagnóstico</button>
     </div>
   </nav>
 
   <main id="top">
-    <!-- HERO -->
+    <div id="conteudo"></div>
+
     <header class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="pill reveal">SOC 24/7 • Hardening • Resposta a incidentes</div>
 
-          <!-- Glitch mais visível -->
-          <h1 class="reveal glitch" data-text="Segurança de verdade não é mais ferramenta. É operação.">
+          <h1 class="reveal glitch" data-text="Segurança de verdade não é “mais ferramenta”. É operação.">
             Segurança de verdade não é “mais ferramenta”.
             <span class="neon">É operação.</span>
           </h1>
@@ -67,7 +74,7 @@
           </p>
 
           <div class="hero-ctas reveal">
-            <button class="btn-primary" data-open-modal>Diagnóstico em 15 min</button>
+            <button class="btn-primary" type="button" data-open-modal>Diagnóstico em 15 min</button>
             <a class="btn-secondary" href="#beneficios">Ver benefícios</a>
           </div>
 
@@ -78,37 +85,42 @@
           </div>
         </div>
 
-        <div class="hero-card reveal" aria-label="Card com resumo">
-          <div class="card-top">
-            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-            <span class="card-title">Resumo do diagnóstico</span>
+        <div class="hero-right">
+          <div class="hero-emblem reveal" aria-hidden="true">
+            <img src="assets/favicon.svg" alt="" />
           </div>
 
-          <div class="card-body">
-            <div class="stat">
-              <span class="stat-k">Visibilidade</span>
-              <span class="stat-v">Ativos + Acessos</span>
-            </div>
-            <div class="stat">
-              <span class="stat-k">Postura</span>
-              <span class="stat-v">Hardening + MFA</span>
-            </div>
-            <div class="stat">
-              <span class="stat-k">Resposta</span>
-              <span class="stat-v">Playbooks + MTTR ↓</span>
+          <div class="hero-card reveal" aria-label="Card com resumo">
+            <div class="card-top">
+              <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+              <span class="card-title">Resumo do diagnóstico</span>
             </div>
 
-            <div class="mini-note">
-              *Simulação ilustrativa — planejamento varia por ambiente.
-            </div>
+            <div class="card-body">
+              <div class="stat">
+                <span class="stat-k">Visibilidade</span>
+                <span class="stat-v">Ativos + Acessos</span>
+              </div>
+              <div class="stat">
+                <span class="stat-k">Postura</span>
+                <span class="stat-v">Hardening + MFA</span>
+              </div>
+              <div class="stat">
+                <span class="stat-k">Resposta</span>
+                <span class="stat-v">Playbooks + MTTR ↓</span>
+              </div>
 
-            <button class="btn-primary w-100" data-open-modal>Quero meu diagnóstico</button>
+              <div class="mini-note">
+                *Simulação ilustrativa — planejamento varia por ambiente.
+              </div>
+
+              <button class="btn-primary w-100" type="button" data-open-modal>Quero meu diagnóstico</button>
+            </div>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- BENEFÍCIOS -->
     <section id="beneficios" class="section">
       <div class="container">
         <h2 class="section-title reveal">Benefícios que você sente na operação</h2>
@@ -150,7 +162,6 @@
       </div>
     </section>
 
-    <!-- COMO FUNCIONA -->
     <section id="como-funciona" class="section alt">
       <div class="container">
         <h2 class="section-title reveal">Como funciona (sem mistério)</h2>
@@ -194,12 +205,11 @@
             <h3>Quer ver onde está seu risco hoje?</h3>
             <p>Em 15 minutos você sai com um mapa de prioridades.</p>
           </div>
-          <button class="btn-primary" data-open-modal>Solicitar diagnóstico</button>
+          <button class="btn-primary" type="button" data-open-modal>Solicitar diagnóstico</button>
         </div>
       </div>
     </section>
 
-    <!-- PROVA SOCIAL -->
     <section id="prova-social" class="section">
       <div class="container">
         <h2 class="section-title reveal">Resultados (exemplos plausíveis)</h2>
@@ -229,7 +239,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq" class="section alt">
       <div class="container">
         <h2 class="section-title reveal">FAQ</h2>
@@ -237,41 +246,41 @@
 
         <div class="faq">
           <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false">
+            <button class="faq-q" type="button" aria-expanded="false">
               Isso é um “robô” ou atendimento humano?
               <span class="chev" aria-hidden="true">▾</span>
             </button>
-            <div class="faq-a">
+            <div class="faq-a" role="region">
               Operação e suporte humano. Automação só onde faz sentido (triagem e fluxo), sem perder qualidade.
             </div>
           </div>
 
           <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false">
+            <button class="faq-q" type="button" aria-expanded="false">
               Em quanto tempo eu vejo resultado?
               <span class="chev" aria-hidden="true">▾</span>
             </button>
-            <div class="faq-a">
+            <div class="faq-a" role="region">
               Visibilidade inicial em dias. Redução real de risco vem com hardening e rotina contínua (semanas).
             </div>
           </div>
 
           <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false">
+            <button class="faq-q" type="button" aria-expanded="false">
               Preciso trocar minhas ferramentas?
               <span class="chev" aria-hidden="true">▾</span>
             </button>
-            <div class="faq-a">
+            <div class="faq-a" role="region">
               Não necessariamente. A ideia é integrar com o que você já usa e fechar lacunas por prioridade.
             </div>
           </div>
 
           <div class="faq-item reveal">
-            <button class="faq-q" aria-expanded="false">
+            <button class="faq-q" type="button" aria-expanded="false">
               Vocês fazem pentest?
               <span class="chev" aria-hidden="true">▾</span>
             </button>
-            <div class="faq-a">
+            <div class="faq-a" role="region">
               Sim, somente com autorização e escopo definido. Entregamos relatório técnico e recomendações priorizadas.
             </div>
           </div>
@@ -280,17 +289,16 @@
         <div class="cta-final reveal">
           <h3>Pronto pra reduzir risco sem complicar?</h3>
           <p>Solicite o diagnóstico e receba um plano de ação por prioridade.</p>
-          <button class="btn-primary" data-open-modal>Solicitar diagnóstico</button>
+          <button class="btn-primary" type="button" data-open-modal>Solicitar diagnóstico</button>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer-row">
         <div>
           <div class="logo small">
-            <img class="logo-icon" src="assets/favicon.svg" alt="" aria-hidden="true" />
+            <span class="logo-mark" aria-hidden="true"></span>
             <span class="logo-text">NEONSHIELD</span>
           </div>
           <p class="muted">Defesa digital focada em operação: postura, monitoramento e resposta.</p>
@@ -304,7 +312,7 @@
 
         <div class="footer-links">
           <a href="#top">Voltar ao topo</a>
-          <button class="linklike" data-open-modal>Solicitar diagnóstico</button>
+          <button class="linklike" type="button" data-open-modal>Solicitar diagnóstico</button>
         </div>
       </div>
 
@@ -315,39 +323,38 @@
     </footer>
   </main>
 
-  <!-- MODAL -->
   <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc" tabindex="-1">
       <div class="modal-head">
         <div>
           <h2 id="modalTitle">Solicitar diagnóstico</h2>
-          <p class="muted">Preencha e retornamos com um plano inicial.</p>
+          <p class="muted" id="modalDesc">Preencha e retornamos com um plano inicial.</p>
         </div>
-        <button class="modal-close" data-close-modal aria-label="Fechar">✕</button>
+        <button class="modal-close" type="button" data-close-modal aria-label="Fechar">✕</button>
       </div>
 
       <form class="form" id="leadForm" novalidate>
         <label>
           Nome
-          <input name="name" id="name" type="text" placeholder="Seu nome" required />
+          <input name="name" id="name" type="text" placeholder="Seu nome" autocomplete="name" required />
           <small class="error" data-error-for="name">Informe seu nome.</small>
         </label>
 
         <label>
           Empresa
-          <input name="company" id="company" type="text" placeholder="Nome da empresa" required />
+          <input name="company" id="company" type="text" placeholder="Nome da empresa" autocomplete="organization" required />
           <small class="error" data-error-for="company">Informe sua empresa.</small>
         </label>
 
         <label>
           Email
-          <input name="email" id="email" type="email" placeholder="seuemail@empresa.com" required />
+          <input name="email" id="email" type="email" placeholder="seuemail@empresa.com" autocomplete="email" required />
           <small class="error" data-error-for="email">Informe um email válido.</small>
         </label>
 
         <label>
           WhatsApp
-          <input name="whatsapp" id="whatsapp" type="tel" placeholder="(00) 00000-0000" required />
+          <input name="whatsapp" id="whatsapp" type="tel" placeholder="(00) 00000-0000" inputmode="tel" autocomplete="tel" required />
           <small class="error" data-error-for="whatsapp">Informe um WhatsApp válido.</small>
         </label>
 
