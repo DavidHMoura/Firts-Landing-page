@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NeonShield Security | Defesa Digital 24/7</title>
+  <meta name="description" content="SOC 24/7, hardening e resposta a incidentes. Reduza risco e acelere a detecção. Diagnóstico rápido e objetivo." />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="navbar" aria-label="Navegação principal">
+    <div class="container navbar-container">
+      <a href="#top" class="logo" aria-label="NeonShield - Início">
+        <!-- ESCUDO (usa o favicon.svg como ícone do logo) -->
+        <img class="logo-icon" src="assets/favicon.svg" alt="" aria-hidden="true" />
+        <span class="logo-text">NEONSHIELD</span>
+      </a>
+
+      <ul class="nav-links" aria-label="Links">
+        <li><a href="#beneficios">Benefícios</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#prova-social">Resultados</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <button class="nav-cta" data-open-modal>Solicitar diagnóstico</button>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-panel" id="mobilePanel" aria-label="Menu mobile">
+      <a href="#beneficios">Benefícios</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#prova-social">Resultados</a>
+      <a href="#faq">FAQ</a>
+      <button class="nav-cta w-100" data-open-modal>Solicitar diagnóstico</button>
+    </div>
+  </nav>
+
+  <main id="top">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="pill reveal">SOC 24/7 • Hardening • Resposta a incidentes</div>
+
+          <!-- Glitch mais visível -->
+          <h1 class="reveal glitch" data-text="Segurança de verdade não é mais ferramenta. É operação.">
+            Segurança de verdade não é “mais ferramenta”.
+            <span class="neon">É operação.</span>
+          </h1>
+
+          <p class="hero-subtitle reveal">
+            A NeonShield reduz risco com uma rotina defensiva clara: postura, monitoramento e resposta rápida.
+            Sem enrolação. Sem “dashboard bonito” vazio.
+          </p>
+
+          <div class="hero-ctas reveal">
+            <button class="btn-primary" data-open-modal>Diagnóstico em 15 min</button>
+            <a class="btn-secondary" href="#beneficios">Ver benefícios</a>
+          </div>
+
+          <div class="hero-trust reveal" aria-label="Destaques">
+            <div class="trust-item">✅ Playbooks operacionais</div>
+            <div class="trust-item">✅ Evidências e relatórios</div>
+            <div class="trust-item">✅ Integração com seu stack</div>
+          </div>
+        </div>
+
+        <div class="hero-card reveal" aria-label="Card com resumo">
+          <div class="card-top">
+            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+            <span class="card-title">Resumo do diagnóstico</span>
+          </div>
+
+          <div class="card-body">
+            <div class="stat">
+              <span class="stat-k">Visibilidade</span>
+              <span class="stat-v">Ativos + Acessos</span>
+            </div>
+            <div class="stat">
+              <span class="stat-k">Postura</span>
+              <span class="stat-v">Hardening + MFA</span>
+            </div>
+            <div class="stat">
+              <span class="stat-k">Resposta</span>
+              <span class="stat-v">Playbooks + MTTR ↓</span>
+            </div>
+
+            <div class="mini-note">
+              *Simulação ilustrativa — planejamento varia por ambiente.
+            </div>
+
+            <button class="btn-primary w-100" data-open-modal>Quero meu diagnóstico</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- BENEFÍCIOS -->
+    <section id="beneficios" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Benefícios que você sente na operação</h2>
+        <p class="section-subtitle reveal">
+          O objetivo é simples: reduzir exposição e responder rápido quando algo sair do normal.
+        </p>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <h3>Menos risco</h3>
+            <p>Hardening guiado e correção por prioridade (impacto real para o negócio).</p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Menos ruído</h3>
+            <p>Triagem com playbooks e contexto para evitar alerta inútil virar rotina.</p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Mais controle</h3>
+            <p>Relatórios objetivos e evidências para auditoria, gestão e conformidade.</p>
+          </article>
+        </div>
+
+        <div class="metrics reveal" aria-label="Métricas">
+          <div class="metric">
+            <div class="metric-v">24/7</div>
+            <div class="metric-k">Monitoramento</div>
+          </div>
+          <div class="metric">
+            <div class="metric-v">↓ MTTR</div>
+            <div class="metric-k">Resposta mais rápida</div>
+          </div>
+          <div class="metric">
+            <div class="metric-v">+ Postura</div>
+            <div class="metric-k">Hardening contínuo</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona" class="section alt">
+      <div class="container">
+        <h2 class="section-title reveal">Como funciona (sem mistério)</h2>
+        <p class="section-subtitle reveal">
+          Processo simples em 4 etapas. Você sabe exatamente o que está pagando.
+        </p>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-n">1</span>
+            <div>
+              <h3>Descoberta</h3>
+              <p>Mapeamos ativos, acessos, exposição e riscos prioritários.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-n">2</span>
+            <div>
+              <h3>Baseline e Hardening</h3>
+              <p>Aplicamos padrões mínimos (MFA, políticas, backups, configurações críticas).</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-n">3</span>
+            <div>
+              <h3>Monitoramento</h3>
+              <p>Alertas com contexto, correlação e triagem para reduzir falsos positivos.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-n">4</span>
+            <div>
+              <h3>Resposta e Evolução</h3>
+              <p>Playbooks, contenção e melhoria contínua com relatório executivo e técnico.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="cta-inline reveal">
+          <div>
+            <h3>Quer ver onde está seu risco hoje?</h3>
+            <p>Em 15 minutos você sai com um mapa de prioridades.</p>
+          </div>
+          <button class="btn-primary" data-open-modal>Solicitar diagnóstico</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROVA SOCIAL -->
+    <section id="prova-social" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Resultados (exemplos plausíveis)</h2>
+        <p class="section-subtitle reveal">
+          Casos ilustrativos — o que muda quando existe operação.
+        </p>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <div class="tag">Fintech</div>
+            <h3>Menos ruído, mais foco</h3>
+            <p>Correlação e playbooks reduziram alertas repetitivos e melhoraram a priorização.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="tag">Clínica</div>
+            <h3>Postura LGPD</h3>
+            <p>MFA + revisão de acessos + trilha de auditoria organizada para evidência.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="tag">E-commerce</div>
+            <h3>Resposta mais rápida</h3>
+            <p>Rotina de contenção e rotação de credenciais com alertas de anomalia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section alt">
+      <div class="container">
+        <h2 class="section-title reveal">FAQ</h2>
+        <p class="section-subtitle reveal">Respostas rápidas e objetivas.</p>
+
+        <div class="faq">
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              Isso é um “robô” ou atendimento humano?
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="faq-a">
+              Operação e suporte humano. Automação só onde faz sentido (triagem e fluxo), sem perder qualidade.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              Em quanto tempo eu vejo resultado?
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="faq-a">
+              Visibilidade inicial em dias. Redução real de risco vem com hardening e rotina contínua (semanas).
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              Preciso trocar minhas ferramentas?
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="faq-a">
+              Não necessariamente. A ideia é integrar com o que você já usa e fechar lacunas por prioridade.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-q" aria-expanded="false">
+              Vocês fazem pentest?
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="faq-a">
+              Sim, somente com autorização e escopo definido. Entregamos relatório técnico e recomendações priorizadas.
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-final reveal">
+          <h3>Pronto pra reduzir risco sem complicar?</h3>
+          <p>Solicite o diagnóstico e receba um plano de ação por prioridade.</p>
+          <button class="btn-primary" data-open-modal>Solicitar diagnóstico</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-row">
+        <div>
+          <div class="logo small">
+            <img class="logo-icon" src="assets/favicon.svg" alt="" aria-hidden="true" />
+            <span class="logo-text">NEONSHIELD</span>
+          </div>
+          <p class="muted">Defesa digital focada em operação: postura, monitoramento e resposta.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#beneficios">Benefícios</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#faq">FAQ</a>
+        </div>
+
+        <div class="footer-links">
+          <a href="#top">Voltar ao topo</a>
+          <button class="linklike" data-open-modal>Solicitar diagnóstico</button>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span class="muted">© <span id="year"></span> NeonShield — landing page demo</span>
+        <span class="muted">Uso ético e autorizado.</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <div>
+          <h2 id="modalTitle">Solicitar diagnóstico</h2>
+          <p class="muted">Preencha e retornamos com um plano inicial.</p>
+        </div>
+        <button class="modal-close" data-close-modal aria-label="Fechar">✕</button>
+      </div>
+
+      <form class="form" id="leadForm" novalidate>
+        <label>
+          Nome
+          <input name="name" id="name" type="text" placeholder="Seu nome" required />
+          <small class="error" data-error-for="name">Informe seu nome.</small>
+        </label>
+
+        <label>
+          Empresa
+          <input name="company" id="company" type="text" placeholder="Nome da empresa" required />
+          <small class="error" data-error-for="company">Informe sua empresa.</small>
+        </label>
+
+        <label>
+          Email
+          <input name="email" id="email" type="email" placeholder="seuemail@empresa.com" required />
+          <small class="error" data-error-for="email">Informe um email válido.</small>
+        </label>
+
+        <label>
+          WhatsApp
+          <input name="whatsapp" id="whatsapp" type="tel" placeholder="(00) 00000-0000" required />
+          <small class="error" data-error-for="whatsapp">Informe um WhatsApp válido.</small>
+        </label>
+
+        <button class="btn-primary w-100" id="submitBtn" type="submit">Enviar</button>
+
+        <div class="success" id="successMessage" aria-live="polite">
+          ✅ Recebido! Em breve entraremos em contato.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
