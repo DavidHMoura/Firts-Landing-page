@@ -36,7 +36,7 @@ As a security-focused professional, this project is not just about visuals; it f
 ## 🚀 Live Preview
 
 The site is permanently available at:
-👉 **[https://davidhmoura.github.io/MyLP/](https://davidhmoura.github.io/MyLP/)**
+👉 **[https://davidhmoura.github.io/Firts-Landing-page/](https://davidhmoura.github.io/Firts-Landing-page/)**
 
 ---
 
@@ -66,4 +66,8 @@ If you're interested in Backend, Pentest, or AppSec, let's talk:
 
 ---
 
+<<<<<<< HEAD
 > "Understand how systems fail to make them fail-proof." 🛡️
+=======
+> "Understand how systems fail to make them fail-proof." 🛡️
+>>>>>>> 7d9a503 (improve README with AppSec highlights and project overview.)
