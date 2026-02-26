@@ -4,61 +4,61 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Stack: Java/AppSec](https://img.shields.io/badge/Stack-Java%20%7C%20AppSec-blue)](#)
 
-Esta é a minha landing page profissional, projetada com uma estética **Hacker/Cyberpunk** para refletir minha atuação em **Backend Engineering** e **Application Security (AppSec)**. O projeto foi otimizado para oferecer uma experiência imersiva, segura e de alta performance.
+This is my professional landing page, designed with a **Hacker/Cyberpunk** aesthetic to reflect my expertise in **Backend Engineering** and **Application Security (AppSec)**. The project has been optimized to provide an immersive, secure, and high-performance experience.
 
 ---
 
-## 🛡️ Destaques de Segurança (AppSec)
+## 🛡️ AppSec Highlights
 
-Como profissional de segurança, este projeto não é apenas visual; ele segue boas práticas de proteção:
+As a security-focused professional, this project is not just about visuals; it follows best protection practices:
 
-- **Mitigação de XSS (Cross-Site Scripting)**: O sistema de internacionalização (i18n) utiliza `textContent` em vez de `innerHTML` para evitar a execução de scripts maliciosos via atributos de dados.
-- **Navegação Segura**: Todos os links externos utilizam `rel="noopener noreferrer"` para prevenir ataques de *tab-nabbing* e proteger a privacidade do referenciador.
-- **Ofuscação de Contatos**: Implementação de proteções básicas contra scrapers automáticos de e-mail e telefone.
+- **XSS Mitigation (Cross-Site Scripting)**: The internationalization (i18n) system uses `textContent` instead of `innerHTML` to prevent malicious script execution via data attributes.
+- **Secure Navigation**: All external links use `rel="noopener noreferrer"` to prevent *tab-nabbing* attacks and protect referrer privacy.
+- **Contact Obfuscation**: Implementation of basic protections against automated email and phone number scrapers.
 
 ## ⚡ Performance & UX
 
-- **Animações Otimizadas**: O efeito **Matrix Canvas** e o **Cursor Neon** utilizam `requestAnimationFrame` para garantir 60 FPS com baixo consumo de CPU/Bateria.
-- **Acessibilidade (A11y)**:
-  - Uso de `aria-labels` em todos os elementos interativos sem texto (ícones sociais).
-  - Desativação inteligente do cursor personalizado em dispositivos *touch* para não interferir na usabilidade nativa.
-- **Internacionalização (i18n)**: Suporte nativo a Português (PT) e Inglês (EN) com persistência de estado.
+- **Optimized Animations**: The **Matrix Canvas** effect and **Neon Cursor** utilize `requestAnimationFrame` to ensure 60 FPS with low CPU/Battery consumption.
+- **Accessibility (A11y)**:
+  - Use of `aria-labels` on all interactive elements without text (social icons).
+  - Smart disabling of the custom cursor on *touch* devices to avoid interfering with native usability.
+- **Internationalization (i18n)**: Native support for Portuguese (PT) and English (EN) with state persistence.
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Technologies Used
 
-- **HTML5** (Semântico)
-- **CSS3** (Variáveis, Grid, Flexbox, Animações complexas)
+- **HTML5** (Semantic)
+- **CSS3** (Variables, Grid, Flexbox, Complex Animations)
 - **JavaScript** (Vanilla JS, DOM API, Canvas API)
-- **GitHub Pages** (Deployment contínuo)
+- **GitHub Pages** (Continuous Deployment)
 
 ---
 
-## 🚀 Como Visualizar
+## 🚀 Live Preview
 
-O site está disponível permanentemente em:
+The site is permanently available at:
 👉 **[https://davidhmoura.github.io/Firts-Landing-page/](https://davidhmoura.github.io/Firts-Landing-page/)**
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📂 Project Structure
 
-O projeto segue uma organização limpa e modular:
+The project follows a clean and modular organization:
 
 ```text
-├── index.html          # Estrutura principal
+├── index.html          # Main structure
 ├── assets/
 │   ├── css/
-│   │   └── style.css   # Estilização e Animações
+│   │   └── style.css   # Styling and Animations
 │   └── js/
-│       └── script.js  # Lógica, i18n e Segurança
-└── README.md           # Documentação do projeto
+│       └── script.js   # Logic, i18n, and Security
+└── README.md           # Project documentation
 ```
 
 ---
 
-## 🤝 Contato
+## 🤝 Let's Connect
 
-Se você se interessa por Backend, Pentest ou AppSec, vamos trocar uma ideia:
+If you're interested in Backend, Pentest, or AppSec, let's talk:
 
 - **LinkedIn**: [david-h-moura-457063304](https://www.linkedin.com/in/david-h-moura-457063304/)
 - **Instagram**: [@david.m0ura](https://www.instagram.com/david.m0ura/)
