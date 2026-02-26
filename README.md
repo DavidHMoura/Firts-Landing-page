@@ -36,7 +36,7 @@ As a security-focused professional, this project is not just about visuals; it f
 ## 🚀 Live Preview
 
 The site is permanently available at:
-👉 **[https://davidhmoura.github.io/Firts-Landing-page/](https://davidhmoura.github.io/Firts-Landing-page/)**
+👉 **[https://davidhmoura.github.io/MyLP/](https://davidhmoura.github.io/MyLP/)**
 
 ---
 
